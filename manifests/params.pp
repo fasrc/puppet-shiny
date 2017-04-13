@@ -2,11 +2,15 @@
 #
 #
 class rshiny::params {
-  $pro           = false
-  $pkg_download  = true
-  $pkg_name      = 'shiny-server'
-  $pkg_version   = '1.5.3.838'
-  $pkg_url_base  = 'https://download3.rstudio.org'
+  $pro            = false
+  $config_file    = '/etc/shiny-server/shiny-server.conf'
+  $service_name   = 'shiny'
+  $service_enable = true
+  $service_ensure = 'running'
+  $pkg_download   = true
+  $pkg_name       = 'shiny-server'
+  $pkg_version    = '1.5.3.838'
+  $pkg_url_base   = 'https://download3.rstudio.org'
   case $::osfamily {
       'RedHat': {
         $pkg_type = 'rpm'
